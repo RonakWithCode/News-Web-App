@@ -15,7 +15,8 @@ export class News extends Component {
   }
   
   async componentDidMount() {
-    const API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=d5ad80ac1bb141618e258086e260ff5e"
+    const API_KEY = import.meta.env.VITE_API;
+    const API = "https://newsapi.org/v2/top-headlines?country=us&apiKey="+API_KEY
     const data = await fetch(API);
     const dataJson = await data.json()
     // console.log(dataJson);
