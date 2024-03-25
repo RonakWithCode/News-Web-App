@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class NewsItem extends Component {
   constructor(props) {
@@ -27,7 +28,10 @@ class NewsItem extends Component {
         <p className="card-text">
           {hasEmptyProps ? "Default Description" : truncatedDec}
         </p>
-        <a href={`news/id=${NewsUrl}`} target="_blank" className="btn btn-primary">Read more</a>
+        <Link to={`/news/${NewsUrl}`} className="btn btn-primary">
+        Read more
+      </Link>
+        {/* <a href={`news/id=${NewsUrl}`} target="_blank" className="btn btn-primary">Read more</a> */}
       </div>
     </div>
     
